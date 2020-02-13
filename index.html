@@ -21,12 +21,18 @@
     <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron custom-jumbotron">
       <div class="container">
-        <center>
-          <h1 class="display-4">welcome to my IA4</h1>
-        </center>
-      </div>
+      <center>
+        <div id = "clock"></div>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="/components/clock.js" type="text/babel"></script>
+        <div id = "temp"></div>
+        <script src="/components/thermostat.js" type="text/babel"></script>
+      </center>
+    </div>
     </div>
     <h1 class="display-4">welcome to my IA4!</h1>
     <hr class="my-2">
