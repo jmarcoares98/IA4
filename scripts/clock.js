@@ -57,7 +57,7 @@ buttonClick = () => {
 render() {
     return (
       <div>
-        <h1>Hello CptS 489 Students!</h1>
+        <h1>this is the time</h1>
         {this.state.visible ? <h2>It is <FormattedDate 
         date={this.state.date} />.</h2> : null}
         <button className="btn btn-primary" onClick={this.buttonClick}>
@@ -69,5 +69,5 @@ render() {
 
 ReactDOM.render(
   <Clock />,
-  document.getElementById('root')
+  document.getElementById('clock')
 );
