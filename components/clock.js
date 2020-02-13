@@ -1,3 +1,4 @@
+//Code from class
 class FormattedDate extends React.Component {
   constructor(props) {
     super(props);
@@ -47,7 +48,7 @@ render() {
     return (
       <div>
         <h1>this is the time</h1>
-        {this.state.visible ? <h2>It is <FormattedDate 
+        {this.state.visible ? <h2><FormattedDate 
         date={this.state.date} />.</h2> : null}
       </div>
     );
