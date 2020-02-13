@@ -19,10 +19,16 @@ class TemperatureDisplay extends React.Component {
 
     tempUp(temp){
         this.setState({temperature: temp + 1});
+        if(temp == 80){
+            this.setState({disUp: true});
+        }
     }
 
     tempDown(temp){
         this.setState({temperature: temp - 1});
+        if(temo == 50){
+            this.setState({disDown: false});
+        }
     }
 
     disableUp(temp){
@@ -34,6 +40,7 @@ class TemperatureDisplay extends React.Component {
             document.getElementById("down").classList.remove("disabled");
             this.setState({disDown: false});
         }
+        this.tempUp(temp);
     }
 
     disableDown(temp){
@@ -45,6 +52,7 @@ class TemperatureDisplay extends React.Component {
             document.getElementById("up").classList.remove("disabled");
             this.setState({disUp: false});
         }
+        this.tempDown(temp)
     }
 
     render() {
@@ -54,10 +62,10 @@ class TemperatureDisplay extends React.Component {
             <h2>{this.convertUnits(this.state.tempUnit, this.state.temperature)}
             °{this.state.tempUnit}</h2>
             <div>
-                <button disabled = {!this.state.disUp} id = "up" class="btn btn-dark" onClick={() => this.disableUp(this.state.temperature)} > 
+                <button disabled = {this.state.disUp} id = "up" class="btn btn-dark" onClick={() => this.disableUp(this.state.temperature)} > 
                     <span class = "fas fa-arrow-up"></span>
                 </button>
-                <button disabled = {!this.state.disDown} id = "down" class="btn btn-dark" onClick={() => this.disableDown(this.state.temperature)}>
+                <button disabled = {this.state.disDown} id = "down" class="btn btn-dark" onClick={() => this.disableDown(this.state.temperature)}>
                     <span class = "fas fa-arrow-down"></span>
                 </button>
             </div>
